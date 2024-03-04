@@ -1,0 +1,174 @@
+# Project information
+site_name: ElectroNick
+site_url: https://electronick.co
+site_author: Nick Velásquez
+site_description: >-
+  Hi! i'm Nick. Come and explore with me different stuff in the journey of being alive.
+
+# Copyright
+copyright: Copyright &copy; 2024 Electronick.co
+
+theme:
+  name: material
+  custom_dir: overrides
+  icon:
+    repo: material/github
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  favicon: assets/favicon.ico
+  logo: assets/logo.png
+  features:
+    # - navigation.instant #Without this, the jump from home page to other subpages fails.
+    # - navigation.instant.prefetch
+    # - navigation.tabs
+    # - navigation.tracking
+    # - navigation.expand
+    # - navigation.path
+    # - toc.follow
+    # - search.suggest
+    # - search.highlight
+    # - search.share
+    # - navigation.footer
+    # - navigation.indexes
+    # - navigation.top
+    # - content.action.edit
+    # - content.action.view
+    # - content.code.annotate
+    # - content.code.copy
+    # - content.code.select
+
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+
+
+  palette: 
+    # Palette toggle for light mode
+    - scheme: deepdeck
+      toggle:
+        icon: material/weather-sunny 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+
+repo_url: https://github.com/DeepSea-Developments/DeepRad.web
+repo_name: electronick.co
+edit_uri: edit/mkdocs/docs/
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+  analytics: 
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target=_blank>feedback form</a>.
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+ 
+plugins:
+ 
+  - search
+  - tags
+  # - glightbox
+  - blog:
+      archive: true
+      archive_toc: true
+      archive_name: Archive
+      archive_date_format: yyyy
+      archive_url_date_format: yyyy
+      categories: true
+      categories_toc: true
+      blog_toc: true
+      post_url_format: "{slug}" 
+      post_excerpt_separator: <!-- more -->
+      pagination_per_page: 5
+      # post_excerpt: required
+
+    # CI=1 mkdocs build
+  - group:
+      enabled: !ENV CI
+      plugins:
+        - social
+        - git-revision-date-localized:
+            enable_creation_date: true
+            type: timeago
+        - git-committers:
+            repository: DeepSea-Developments/DeepDeck.Ahuyama.fw
+            branch: mkdocs
+        - minify:
+            minify_html: true
+
+  # INSIDERS=1 mkdocs build
+  - group:
+      enabled: !ENV INSIDERS
+      plugins:
+        - meta
+        - blog:
+          archive_pagination_per_page: 5
+
+  # Page tree
+nav:
+  - Home: index.md
+  - Projects: 
+    - First steps: en/QuickStartGuide/qsg.md
+  - Portfolio:
+    - SDRs: en/QuickStartGuide/sdr.md
+  - Nick's Blog: 
+    - blog/index.md
