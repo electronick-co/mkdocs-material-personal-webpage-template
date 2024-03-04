@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ 'css/styles.css' | url }}">
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script src="{{ 'js/scripts.js' | url }}"></script>
+  
+{% endblock %}
+
+{% block footer %}{% endblock %}

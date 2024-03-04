@@ -1,4 +1,4 @@
 ---
-title: DeepRad
+title: ElectroNick
 template: home.html
 ---   
