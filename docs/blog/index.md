@@ -1,2 +1,2 @@
-# Latest news on DeepDeck
+# Blog is here!
 
